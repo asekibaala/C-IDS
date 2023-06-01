@@ -1,6 +1,7 @@
 # C-IDS
 
 C-IDS (Intrusion Detection System)
+
 Author: Abel Sekibaala
 
 C-IDS is a lightweight Intrusion Detection System implemented in C programming language. It aims to monitor network traffic, analyze packets, and detect potential intrusions or suspicious activities. The IDS incorporates various modules for packet capture, packet analysis, rule engine, alert generation, logging, response mechanism, configuration, and management.
