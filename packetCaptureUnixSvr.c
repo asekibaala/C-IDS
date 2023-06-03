@@ -30,7 +30,7 @@ void collectData()
             exit(1);
         }
 	else
-	  printf("connection from client accepted");
+	  printf("connection from client accepted\n");
         //Read data from the client socket
         memset(buffer, 0, MAX_BUFFER_SIZE);
         bytesRead = read(clientSock,buffer,MAX_BUFFER_SIZE-1);

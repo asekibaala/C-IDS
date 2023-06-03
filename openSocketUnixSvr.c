@@ -25,7 +25,7 @@ int openSocket(int port)
     // Bind the socket to the specified port
     memset(&serverAddr, 0, sizeof(serverAddr));
     serverAddr.sin_family = AF_INET;
-    serverAddr.sin_addr.s_addr = htnol(INADDR_ANY);
+    serverAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     serverAddr.sin_port = htons(port);
     if (bind(sock,(struct sockaddr *) &serverAddr,sizeof(serverAddr)) < 0)
     {
@@ -35,7 +35,7 @@ int openSocket(int port)
     //listen for the incoming connections
     if (listen(sock,5) < 0)
     {
-        perror(Error listening on socket);
+        perror("Error listening on socket");
         exit(1);
     }
     return sock;
