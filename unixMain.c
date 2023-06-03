@@ -6,7 +6,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <errno.h>
-
+#include "main.h"
 int main()
 {
     //call the collectData function to start collecting data
