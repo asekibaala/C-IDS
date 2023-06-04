@@ -4,7 +4,7 @@
 
 //Function to open a socket and bind it to a port
 
-int openSocket(){
+int openSocket(int port){
     WSADATA wsaData;
     SOCKET sock;
     struct sockaddr_in serverAddr;
@@ -33,6 +33,15 @@ int openSocket(){
         printf("Error binding socket:%d\n",WSAGetLastError());
         closesocket(sock);
         WASCleanup();
+        exit(1);
+    }
+
+    //lisetn for incoming connections
+    if (listen(sock, 5) == SOCKET_ERROR)
+    {
+        printf("Error listening on socket:%d\n",WSAGetLastError());
+        closesocket(sock);
+        WSACleanup();
         exit(1);
     }
     return sock;
